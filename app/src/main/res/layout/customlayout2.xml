@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="93dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="259dp"
+        android:layout_height="36dp"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <TextView
+        android:id="@+id/textView_description"
+        android:layout_width="259dp"
+        android:layout_height="36dp"
+        android:layout_alignStart="@+id/textView_name"
+        android:layout_alignParentTop="true"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+</android.support.constraint.ConstraintLayout>

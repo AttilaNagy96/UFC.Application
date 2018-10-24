@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".UFC_Home"
+    tools:showIn="@layout/activity_ufc__home">
+
+    <TextView
+        android:id="@+id/ufcTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ufcTitle"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
+
+    <Button
+        android:id="@+id/fightersMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="fightersMenuPressed"
+        android:text="@string/fightersMenu"
+        app:layout_constraintBottom_toTopOf="@+id/ufcTitle"
+        app:layout_constraintEnd_toStartOf="@+id/pfpMenu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pfpMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="pfpMenuPressed"
+        android:text="@string/pfpMenu"
+        app:layout_constraintBottom_toTopOf="@+id/ufcTitle"
+        app:layout_constraintEnd_toStartOf="@+id/eventsMenu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fightersMenu" />
+
+    <Button
+        android:id="@+id/eventsMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="eventsMenuPressed"
+        android:text="@string/eventsMenu"
+        app:layout_constraintBottom_toTopOf="@+id/ufcTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pfpMenu" />
+
+    <ImageView
+        android:id="@+id/ufc232"
+        android:layout_width="wrap_content"
+        android:layout_height="225dp"
+        android:contentDescription="@string/ufc232"
+        android:onClick="eventsImagePressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventsMenu"
+        app:layout_constraintVertical_bias="0.355"
+        app:srcCompat="@drawable/ufc232" />
+
+    <TextView
+        android:id="@+id/ufc232Click"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:contentDescription="@string/ufc232Click"
+        android:text="@string/ufc232"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ufc232"
+        app:layout_constraintVertical_bias="0.218"
+        tools:text="Click on the image to find out more about the event!" />
+
+</android.support.constraint.ConstraintLayout>
