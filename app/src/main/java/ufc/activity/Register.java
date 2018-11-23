@@ -17,40 +17,46 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class Register extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
+    private Button registerButton;
+    private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private Button loginButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        //if user is already logged in, start main activity
-        if (auth.getCurrentUser() != null) {
-            Toast.makeText(this, "You are logged in", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(Login.this, LoggedInUser.class));
-            finish();
-        }
+        registerButton = (Button) findViewById(R.id.registerButton);
+        inputEmail = (EditText) findViewById(R.id.regMail);
+        inputPassword = (EditText) findViewById(R.id.regPswd);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        setContentView(R.layout.activity_login);
-        inputEmail = (EditText) findViewById(R.id.logMail);
-        inputPassword = (EditText) findViewById(R.id.logPswd);
-        loginButton = (Button) findViewById(R.id.loginButton);
-
-        //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance();
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = inputEmail.getText().toString();
-                final String password = inputPassword.getText().toString();
+                startActivity(new Intent(Register.this, Login.class));
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String email = inputEmail.getText().toString().trim();
+                String password = inputPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -62,37 +68,45 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
-                //authenticate user
-                auth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                if (password.length() < 6) {
+                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+                //create user
+                auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
-                                    // there was an error
-                                    if (password.length() < 6) {
-                                        inputPassword.setError(getString(R.string.minimum_pswd));
-
-                                    } else {
-                                        Toast.makeText(Login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
-                                    }
+                                    Toast.makeText(Register.this, "Authentication failed." + task.getException(),
+                                            Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Intent intent = new Intent(Login.this, LoggedInUser.class);
-                                    startActivity(intent);
+                                    startActivity(new Intent(Register.this, Login.class));
                                     finish();
                                 }
                             }
                         });
+
             }
         });
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
+        getMenuInflater().inflate(R.menu.menu_registration, menu);
         return true;
     }
     @Override
@@ -103,11 +117,11 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(this, "Contact Selected", Toast.LENGTH_SHORT).show();
                 startActivity (new Intent(this, Contact.class));
                 break;
-            case R.id.register:
-                Toast.makeText(this, "Register Selected", Toast.LENGTH_SHORT).show();
-                startActivity (new Intent(this, Register.class));
+            case R.id.SignIn:
+                Toast.makeText(this, "Sign In Selected", Toast.LENGTH_SHORT).show();
+                startActivity (new Intent(this, Login.class));
                 break;
-            case R.id.homeMenu:
+            case R.id.home:
                 Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show();
                 startActivity (new Intent(this, UFC_Home.class));
                 break;
@@ -119,32 +133,4 @@ public class Login extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
-
-
-//if (password.length() < 6) {
-
-//inputPassword.setError(getString(R.string.minimum_password));
-
-//} else {
-
-//Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
-
-//}
-       // } else {
-
-//Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-////startActivity(intent);
-
-//finish();
-//        }
-//        }
-//        });
-//        }
-//        });
-//        }
- //       }
-
 

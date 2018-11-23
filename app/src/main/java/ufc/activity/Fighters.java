@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import ufc.divisions.Bantamweight;
@@ -34,7 +35,6 @@ public class Fighters extends AppCompatActivity {
             "Middleweight Division",
             "Light-Heavyweight Division",
             "Heavyweight Division"};
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,6 @@ public class Fighters extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -120,6 +119,7 @@ public class Fighters extends AppCompatActivity {
                 break;
             case R.id.register:
                 Toast.makeText(this, "Register Selected", Toast.LENGTH_SHORT).show();
+                startActivity (new Intent(this, Register.class));
                 break;
             case R.id.signIn:
                 Toast.makeText(this, "Sign In Selected", Toast.LENGTH_SHORT).show();

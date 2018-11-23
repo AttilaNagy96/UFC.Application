@@ -1,9 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ufc.activity.UFC_Home">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homeMenu"
+        android:id="@+id/home"
         android:title="@string/home" />
     <item
         android:id="@+id/action_settings"
@@ -11,8 +10,9 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/register"
-        android:title="@string/register" />
+        android:id="@+id/SignIn"
+        android:title="@string/signIn" />
+
     <item
         android:id="@+id/contact"
         android:title="Contact" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ufc.events.UFC232">
+    tools:context="ufc.events.UFC233">
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_player"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ufc232Title" />
+        app:layout_constraintTop_toBottomOf="@+id/ufc233Title" />
 
     <Button
         android:id="@+id/homeMenu"
@@ -28,7 +28,7 @@
         android:layout_marginBottom="8dp"
         android:onClick="homeMenuPressed"
         android:text="@string/homeMenu"
-        app:layout_constraintBottom_toTopOf="@id/ufc232Title"
+        app:layout_constraintBottom_toTopOf="@+id/ufc233Title"
         app:layout_constraintEnd_toStartOf="@+id/fightersMenu"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
         android:layout_marginBottom="8dp"
         android:onClick="pfpMenuPressed"
         android:text="@string/pfpMenu"
-        app:layout_constraintBottom_toTopOf="@+id/ufc232Title"
+        app:layout_constraintBottom_toTopOf="@+id/ufc233Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/fightersMenu"
@@ -82,18 +82,17 @@
         app:layout_constraintVertical_bias="0.92" />
 
     <TextView
-        android:id="@+id/ufc232Title"
+        android:id="@+id/ufc233Title"
         android:layout_width="167dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
-        android:contentDescription="@string/ufc232Title"
-        android:text="UFC 232"
+        android:contentDescription="UFC 233"
+        android:text="UFC 233"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fightersMenu" />
-
 </android.support.constraint.ConstraintLayout>

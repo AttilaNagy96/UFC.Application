@@ -14,6 +14,6 @@
         android:id="@+id/signIn"
         android:title="@string/signIn" />
     <item
-        android:id="@+id/contact"
-        android:title="Contact" />
+    android:id="@+id/contact"
+    android:title="Contact" />
 </menu>

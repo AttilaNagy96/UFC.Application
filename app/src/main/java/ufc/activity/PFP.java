@@ -69,6 +69,7 @@ public class PFP extends AppCompatActivity {
                 break;
             case R.id.register:
                 Toast.makeText(this, "Register Selected", Toast.LENGTH_SHORT).show();
+                startActivity (new Intent(this, Register.class));
                 break;
             case R.id.signIn:
                 Toast.makeText(this, "Sign In Selected", Toast.LENGTH_SHORT).show();

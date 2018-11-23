@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "410678219944",
+    "firebase_url": "https://ufc-app-2018.firebaseio.com",
+    "project_id": "ufc-app-2018",
+    "storage_bucket": "ufc-app-2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410678219944:android:0e1a89af52af7e1a",
+        "android_client_info": {
+          "package_name": "ufc.activity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410678219944-4dah3arsnec9vpnat9j1n0p6hspc2on4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-rqGldKFuO9uD1l9AJNwCfgvVEkhW-T8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

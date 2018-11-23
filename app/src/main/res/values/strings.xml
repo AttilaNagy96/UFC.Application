@@ -111,5 +111,21 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="button">Submit</string>
-
+    <string name="accountImage">account image</string>
+    <string name="logOut">Log Out</string>
+    <string name="welcomeUser">You are logged in!</string>
+    <string name="showEmail">email</string>
+    <string name="deleteAccount">Delete Account</string>
+    <string name="logo">image</string>
+    <string name="text1">title</string>
+    <string name="text">Title</string>
+    <string name="text2">Description</string>
+    <string name="favMenu">Favourites</string>
+    <string name="myAccount">My Account</string>
+    <string name="addToFav">Add your favourite fighter!</string>
+    <string name="addImage">addImage</string>
+    <string name="ufcBelt">ufcBelt</string>
+    <string name="ufcBeltClick">ufcBeltClick</string>
+    <string name="minimum_pswd">Password Too Short</string>
+    <string name="auth_failed">Authentication Failed - Please Register/Connect to Wifi</string>
 </resources>

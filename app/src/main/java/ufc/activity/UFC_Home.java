@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import ufc.crud.Favourites;
+import ufc.events.UFC232;
+
 public class UFC_Home extends AppCompatActivity {
 
     private Button fightersMenu;
@@ -47,7 +50,6 @@ public class UFC_Home extends AppCompatActivity {
         return true;
     }
 
-
     public void fightersMenuPressed (View view)
     {
         Log.v("Fighters", "Fighters Menu Pressed!");
@@ -63,10 +65,10 @@ public class UFC_Home extends AppCompatActivity {
         Log.v("Events", "Events Menu Pressed!");
         startActivity (new Intent(this, Events.class));
     }
-    public void eventsImagePressed (View view)
+    public void beltImagePressed (View view)
     {
-        Log.v("Image", "Events Image Pressed!");
-        startActivity (new Intent(this, UFC232.class));
+        Log.v("Image", "Belt Image Pressed!");
+        startActivity (new Intent(this, Favourites.class));
         Toast.makeText(this, "Image Selected", Toast.LENGTH_SHORT).show();
     }
 
@@ -80,6 +82,7 @@ public class UFC_Home extends AppCompatActivity {
                 break;
             case R.id.register:
                 Toast.makeText(this, "Register Selected", Toast.LENGTH_SHORT).show();
+                startActivity (new Intent(this, Register.class));
                 break;
             case R.id.signIn:
                 Toast.makeText(this, "Sign In Selected", Toast.LENGTH_SHORT).show();

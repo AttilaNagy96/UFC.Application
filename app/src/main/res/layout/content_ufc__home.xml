@@ -57,31 +57,35 @@
         app:layout_constraintStart_toEndOf="@+id/pfpMenu" />
 
     <ImageView
-        android:id="@+id/ufc232"
+        android:id="@+id/ufcBelt"
         android:layout_width="wrap_content"
         android:layout_height="225dp"
-        android:contentDescription="@string/ufc232"
-        android:onClick="eventsImagePressed"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/ufcBelt"
+        android:onClick="beltImagePressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventsMenu"
-        app:layout_constraintVertical_bias="0.355"
-        app:srcCompat="@drawable/ufc232" />
+        app:layout_constraintTop_toBottomOf="@+id/ufcTitle"
+        app:srcCompat="@drawable/belt" />
 
     <TextView
-        android:id="@+id/ufc232Click"
+        android:id="@+id/ufcBeltClick"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
-        android:contentDescription="@string/ufc232Click"
-        android:text="@string/ufc232"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/ufcBeltClick"
+        android:text="Click Image to access 'Favourites Page'"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ufc232"
-        app:layout_constraintVertical_bias="0.218"
-        tools:text="Click on the image to find out more about the event!" />
+        app:layout_constraintTop_toBottomOf="@+id/ufcBelt"
+        app:layout_constraintVertical_bias="0.29" />
 
 </android.support.constraint.ConstraintLayout>
